@@ -1,3 +1,5 @@
+import type { SVGProps } from 'react';
+
 interface CardProps{
 
     titulo: string,
@@ -5,7 +7,7 @@ interface CardProps{
     formato?: string,
     prefix?: string | undefined,
     sufix?: string | undefined,
-    icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>
+    icon?: React.ElementType<React.SVGProps<SVGSVGElement>>
 
 }
 
@@ -17,7 +19,7 @@ function Card({titulo, valor, formato, prefix, sufix, icon: Icon} : CardProps){
 
         <div className="bg-gray-200 p-4 flex flex-row rounded-lg">
             <div className="p-4">
-                <Icon className="w-10 h-10 text-blue-500"/>
+                {Icon && <Icon className="w-10 h-10 text-blue-500" />}
             </div>           
             <div className="flex flex-col justify-center">
                 <h1 className="text-sm">{titulo}</h1>

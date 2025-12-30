@@ -34,7 +34,7 @@ function DatePicker(){
 
         <ReactDatePicker
             selected={dateFrom}
-            onChange={(dateFrom) => setDateFrom(dateFrom)}
+            onChange={(date: Date | null | undefined) => setDateFrom(date ?? null)}
             dateFormat="dd/MM/yyyy"
             placeholderText="Selecione uma data"
             className="border px-3 py-2 rounded mx-3"
