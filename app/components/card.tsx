@@ -1,7 +1,7 @@
 interface CardProps{
 
     titulo: string,
-    valor: number,
+    valor: number | string,
     formato?: string,
     prefix?: string | undefined,
     sufix?: string | undefined,
