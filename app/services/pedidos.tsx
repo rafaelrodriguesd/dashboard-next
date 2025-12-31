@@ -7,7 +7,7 @@ async function pedidos(from: string, to: string) {
 
     try {
 
-        const res = await fetch("http://localhost:3000/api/kpis/pedidos", {
+        const res = await fetch("https://belezalowcost.pt/wp-json/api/v1/pedidos-por-periodo", {
             method: "POST",
             headers: {
             "Content-Type": "application/json",

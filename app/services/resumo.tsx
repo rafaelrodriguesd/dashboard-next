@@ -7,7 +7,7 @@ async function Resumo(from: string, to: string) {
 
     try {
 
-        const res = await fetch("http://localhost:3000/api/kpis/clientes", {
+        const res = await fetch("https://belezalowcost.pt/wp-json/api/v1/relatorio-vendas", {
             method: "POST",
             headers: {
             "Content-Type": "application/json",
