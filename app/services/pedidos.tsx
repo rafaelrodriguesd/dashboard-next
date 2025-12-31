@@ -1,5 +1,7 @@
 async function pedidos(from: string, to: string) {
 
+    const API_KEY = process.env.APIKEY;
+
     const datas = {
         "dataInicio" : from,
         "dataFim" : to
@@ -7,10 +9,15 @@ async function pedidos(from: string, to: string) {
 
     try {
 
+        if (!API_KEY) {
+        throw new Error("API_KEY não definida");
+        }
+
         const res = await fetch("https://belezalowcost.pt/wp-json/api/v1/pedidos-por-periodo", {
             method: "POST",
             headers: {
             "Content-Type": "application/json",
+            "X-API-KEY": API_KEY
             },
             body: JSON.stringify(datas),
         });
@@ -20,6 +27,8 @@ async function pedidos(from: string, to: string) {
         return res.json()
 
     } catch (err) {
+
+        return err
         
     } finally {
         
