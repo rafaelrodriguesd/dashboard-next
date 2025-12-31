@@ -5,6 +5,7 @@ import { formatDate } from "../utils/formatDate";
 import OrderList from "../components/orderList";
 import Resumo from "../services/resumo";
 import Pedidos from "../services/pedidos";
+import { Suspense } from "react";
 
 type Props = {
   searchParams: {
@@ -29,6 +30,7 @@ export default async function Fidelizacao({ searchParams }: Props){
     const pedidos = await Pedidos(from, to)
 
     return(
+        <Suspense fallback={<div>Carregando...</div>}>
         <div className="grid gap-4">
             <div className="bg-white w-min-full p-4 rounded-md shadow-md flex items-center justify-between">
                 <h1 className="text-xl font-bold">Retenção de Clientes</h1>
@@ -60,6 +62,7 @@ export default async function Fidelizacao({ searchParams }: Props){
             
             
         </div>
+        </Suspense>
     )
 
 }

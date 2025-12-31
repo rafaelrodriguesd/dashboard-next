@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import 'react-day-picker/dist/style.css'
+import RouterLoading from "./components/routerloading";
 
 import Header from "./components/header";
 import Sidebar from "./components/sidebar";
@@ -33,12 +34,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-
+        <RouterLoading />
         <div style={{ flex: 1, display: 'flex', flexDirection: 'row', overflow: 'hidden'}}>
         
             <Sidebar />
 
             <main className="min-h-[calc(100vh-132px)] bg-gray-200" style={{ flex: 1, padding: '1rem', overflowY: 'auto' }}>
+              
               {children}
             </main>
         </div>
