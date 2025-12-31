@@ -45,9 +45,9 @@ export default async function Fidelizacao({ searchParams }: Props){
             
                 <Card titulo="Clientes Recorrentes" valor={dados.dados.clientes_recorrentes} icon={UserIcon}/>
 
-                <Card titulo="Ticket Médio" valor={dados.dados.ticket_medio} formato="$" icon={BanknotesIcon}/>
+                <Card titulo="Ticket Médio" valor={parseFloat(dados.dados.ticket_medio)} formato="$" icon={BanknotesIcon}/>
             
-                <Card titulo="Receita Total" valor={dados.dados.receita_total} formato="$" icon={BanknotesIcon}/>
+                <Card titulo="Receita Total" valor={parseFloat(dados.dados.receita_total)} formato="$" icon={BanknotesIcon}/>
 
             </div>
 
