@@ -12,11 +12,11 @@ function OrderList({data} : pedidosProps) {
     const [page, setPage] = useState(0)
     const [rowsPerPage, setRowsPerPage] = useState(5)
 
-    const handleChangePage = (event, newPage) => {
+    const handleChangePage = (event: any, newPage: any) => {
         setPage(newPage)
     }
 
-    const handleChangeHowsPerPage = (event) => {
+    const handleChangeHowsPerPage = (event: any) => {
         setRowsPerPage(event.target.value)
         setPage(0)
     }
@@ -32,7 +32,7 @@ function OrderList({data} : pedidosProps) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map( (item) =>(
+                    {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map( (item: any) =>(
                         <TableRow key={item.order_id}>
                             <TableCell>{item.date_created}</TableCell>
                             <TableCell>{item.order_id}</TableCell>
