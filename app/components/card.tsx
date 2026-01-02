@@ -18,7 +18,7 @@ function Card({titulo, valor, formato, prefix, sufix, icon: Icon} : CardProps){
     return(
 
         <div className="bg-gray-200 p-4 flex flex-row rounded-lg">
-            <div className="p-4">
+            <div className="p-4 h-auto">
                 {Icon && <Icon className="w-10 h-10 text-blue-500" />}
             </div>           
             <div className="flex flex-col justify-center">

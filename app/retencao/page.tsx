@@ -31,17 +31,17 @@ export default async function Fidelizacao({ searchParams }: Props){
 
     return(
         <Suspense fallback={<div>Carregando...</div>}>
-        <div className="grid gap-4">
-            <div className="bg-white w-min-full p-4 rounded-md shadow-md flex items-center justify-between">
-                <h1 className="text-xl font-bold">Retenção de Clientes</h1>
-                <div className="flex items-center">
+        <div className="grid gap-4 w-full">
+            <div className="bg-white w-full p-4 rounded-md shadow-md flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                <h1 className="text-xl font-bold ">Retenção de Clientes</h1>
+                <div className="flex flex-col lg:flex-row lg:items-center">
                     <p className="p-4">Selecione o período: </p>
                     <DatePicker />
                 </div>
                 
             </div>
             
-            <div className="grid grid-cols-2 gap-4 bg-white p-4 mb-4 rounded-md shadow-md">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 bg-white p-4 rounded-md shadow-md">
 
                 <Card titulo="Clientes Novos" valor={dados.dados.clientes_novos} icon={UserPlusIcon}/>
             

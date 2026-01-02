@@ -1,9 +1,10 @@
+'use client'
 import { HomeIcon, UsersIcon } from '@heroicons/react/24/outline';
 import MenuItem from './menuItem';
 
 function Sidebar() {
   return (
-    <aside className='bg-white shadow-md p-4 w-56'>
+    <aside className='bg-white shadow-md p-4 w-64 hidden lg:block'>
       <nav>
         <MenuItem
             label="Home"

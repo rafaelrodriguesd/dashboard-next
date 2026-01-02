@@ -22,11 +22,7 @@ export const metadata: Metadata = {
   description: "Dashboard para indicadores de fidelização de clientes",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children}: any) {
 
   return (
     <html lang="en">
@@ -36,10 +32,10 @@ export default function RootLayout({
         <Header />
         <RouterLoading />
         <div style={{ flex: 1, display: 'flex', flexDirection: 'row', overflow: 'hidden'}}>
-        
+            
             <Sidebar />
 
-            <main className="min-h-[calc(100vh-132px)] bg-gray-200" style={{ flex: 1, padding: '1rem', overflowY: 'auto' }}>
+            <main className="flex-1 min-h-[calc(100vh-132px)] min-w-0 bg-gray-200 p-4 overflow-auto">
               
               {children}
             </main>

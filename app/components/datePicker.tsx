@@ -30,7 +30,7 @@ function DatePicker(){
     }
 
     return(
-        <div className='flex flex-row items-center'>
+        <div className='flex flex-col lg:flex-row lg:items-center'>
 
         <ReactDatePicker
             selected={dateFrom}
@@ -40,7 +40,7 @@ function DatePicker(){
             className="border px-3 py-2 rounded mx-3"
         />
 
-            <p> até </p>
+        <p className='p-4'> até </p>
 
         <ReactDatePicker
             selected={dateTo}
@@ -50,7 +50,7 @@ function DatePicker(){
             className="border px-3 py-2 rounded mx-3"
         />
 
-        <button className='bg-gray-300 hover:bg-gray-400 cursor-pointer px-4 py-2' onClick={handleFilter}>Filtrar</button>
+        <button className='bg-gray-300 hover:bg-gray-400 cursor-pointer px-4 py-2 m-4' onClick={handleFilter}>Filtrar</button>
 
         </div>
     )
