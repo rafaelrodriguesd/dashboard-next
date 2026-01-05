@@ -3,9 +3,8 @@ import { UserIcon, UserPlusIcon, BanknotesIcon } from '@heroicons/react/24/outli
 import DatePicker from "../components/datePicker";
 import { formatDate } from "../utils/formatDate";
 import OrderList from "../components/orderList";
-import Resumo from "../services/resumo";
+import Resumo from "../services/resumoRetencao";
 import Pedidos from "../services/pedidos";
-import { Suspense } from "react";
 
 type Props = {
   searchParams: {
@@ -14,7 +13,7 @@ type Props = {
   }
 }
 
-export default async function Fidelizacao({ searchParams }: Props){
+export default async function Retencao({ searchParams }: Props){
 
     let { from, to } = await searchParams
 
@@ -30,7 +29,7 @@ export default async function Fidelizacao({ searchParams }: Props){
     const pedidos = await Pedidos(from, to)
 
     return(
-        <Suspense fallback={<div>Carregando...</div>}>
+
         <div className="grid gap-4 w-full">
             <div className="bg-white w-full p-4 rounded-md shadow-md flex flex-col lg:flex-row lg:items-center lg:justify-between">
                 <h1 className="text-xl font-bold ">Retenção de Clientes</h1>
@@ -62,7 +61,6 @@ export default async function Fidelizacao({ searchParams }: Props){
             
             
         </div>
-        </Suspense>
     )
 
 }

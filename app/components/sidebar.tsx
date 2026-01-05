@@ -1,5 +1,5 @@
 'use client'
-import { HomeIcon, UsersIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, UsersIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
 import MenuItem from './menuItem';
 
 function Sidebar() {
@@ -17,6 +17,12 @@ function Sidebar() {
             href="/retencao"
             icon={UsersIcon}
           />
+
+        <MenuItem
+          label="Profissionais"
+          href="/profissionais"
+          icon={RocketLaunchIcon}
+        />
       </nav>
     </aside>
   );

@@ -3,21 +3,27 @@
 import { TableContainer, Table, TableBody, TableRow, TableCell, TableHead, TablePagination, TableFooter } from '@mui/material';
 import { useState } from 'react';
 
-interface pedidosProps {
-    data: []
+type Order = {
+  order_id: number
+  date_created: string
+  total_sales: number
 }
 
-function OrderList({data} : pedidosProps) {
+interface PedidosProps {
+  data: Order[]
+}
+
+function OrderList({data} : PedidosProps) {
 
     const [page, setPage] = useState(0)
     const [rowsPerPage, setRowsPerPage] = useState(5)
 
-    const handleChangePage = (event: any, newPage: any) => {
+    const handleChangePage = (event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => {
         setPage(newPage)
     }
 
-    const handleChangeHowsPerPage = (event: any) => {
-        setRowsPerPage(event.target.value)
+    const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setRowsPerPage(Number(event.target.value))
         setPage(0)
     }
 
@@ -32,7 +38,7 @@ function OrderList({data} : pedidosProps) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map( (item: any) =>(
+                    {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map( (item) =>(
                         <TableRow key={item.order_id}>
                             <TableCell>{item.date_created}</TableCell>
                             <TableCell>{item.order_id}</TableCell>
@@ -48,7 +54,7 @@ function OrderList({data} : pedidosProps) {
                             page={page}
                             onPageChange={handleChangePage}
                             rowsPerPage={rowsPerPage}
-                            onRowsPerPageChange={handleChangeHowsPerPage} 
+                            onRowsPerPageChange={handleChangeRowsPerPage} 
                         />
                     </TableRow>
                 </TableFooter>
